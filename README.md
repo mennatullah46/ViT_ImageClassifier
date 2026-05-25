@@ -1,6 +1,6 @@
-##🦊 Vision Transformer (ViT) for Animal Image Classification
+## 🦊 Vision Transformer (ViT) for Animal Image Classification
 
-#A PyTorch implementation of a Vision Transformer (ViT) model trained to classify 18 animal species using a custom dataset.
+# A PyTorch implementation of a Vision Transformer (ViT) model trained to classify 18 animal species using a custom dataset.
 
 This project includes:
 
@@ -26,18 +26,18 @@ Model saving & loading utilities
 ├── train_vit.py
 └── README.md
 
-##📦 Requirements
+## 📦 Requirements
 
-#Install dependencies:
+# Install dependencies:
 
 pip install torch torchvision torchaudio
 pip install transformers
 pip install torchinfo
 pip install pandas numpy scikit-learn pillow
 
-##🐾 Dataset
+## 🐾 Dataset
 
-#The dataset is defined by a CSV file:
+# The dataset is defined by a CSV file:
 
 ImageID, Class
 img_001.jpg, beaver
@@ -54,7 +54,7 @@ beaver, butterfly, cougar, crab, crayfish, crocodile,
 dolphin, dragonfly, elephant, flamingo, kangaroo,
 leopard, llama, lobster, octopus, pigeon, rhino, scorpion
 
-##🔧 Data Preprocessing & Augmentation
+## 🔧 Data Preprocessing & Augmentation
 
 Training Transformations
 
@@ -74,11 +74,11 @@ Resize to 224×224
 
 ImageNet normalization
 
-##🧱 Model Architecture
+## 🧱 Model Architecture
 
-#This project implements a custom Vision Transformer from scratch.
+# This project implements a custom Vision Transformer from scratch.
 
-#Components:
+# Components:
 
 PatchEmbedding using Conv2D
 
@@ -100,9 +100,9 @@ google/vit-base-patch16-224-in21k
 
 Classifier and pooler layers are excluded.
 
-##🚀 Training
+## 🚀 Training
 
-#The training loop includes:
+# The training loop includes:
 
 CrossEntropyLoss
 
@@ -117,9 +117,9 @@ Run training:
 optimizer, scheduler = get_optimizer_and_scheduler(model, total_epochs=200)
 train_model(model, train_loader, optimizer, scheduler, 200, device)
 
-##🧪 Validation
+## 🧪 Validation
 
-#Evaluation uses:
+# Evaluation uses:
 
 CrossEntropyLoss
 
@@ -127,26 +127,26 @@ Accuracy over validation set
 
 test_model(model, val_loader, device)
 
-##💾 Saving & Loading the Model
+## 💾 Saving & Loading the Model
 
-#Save:
+# Save:
 
 torch.save(model.state_dict(), "vit_model_final2.pth")
 
-#Load:
+# Load:
 
 model.load_state_dict(torch.load("vit_model_final2.pth"))
 
-##📤 Export to Google Drive (Colab)
+## 📤 Export to Google Drive (Colab)
 
 shutil.move("/content/vit_model_final2.pth",
             "/content/drive/MyDrive/vit_model_final2.pth")
 
-##📊 Model Summary
+## 📊 Model Summary
 
 summary(model, input_size=(1, 3, 224, 224))
 
-##📝 Notes
+## 📝 Notes
 
 Batch size defaults to 64 (adjust based on GPU memory).
 
